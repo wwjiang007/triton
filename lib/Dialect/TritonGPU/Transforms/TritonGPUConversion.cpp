@@ -61,8 +61,8 @@ TritonGPUTypeConverter::TritonGPUTypeConverter(MLIRContext *context,
                                ValueRange inputs, Location loc) {
     auto cast =
         builder.create<triton::gpu::ConvertLayoutOp>(loc, tensorType, inputs);
-    return Optional<Value>(cast.getResult());
-    // return Optional<Value>(cast.getResult(0));
+    return std::optional<Value>(cast.getResult());
+    // return std::optional<Value>(cast.getResult(0));
     // llvm_unreachable("Not implemented");
     // return std::nullopt;
   });

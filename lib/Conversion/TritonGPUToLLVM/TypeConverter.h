@@ -24,7 +24,7 @@ public:
                                       ConversionPatternRewriter &rewriter,
                                       Type type);
 
-  llvm::Optional<Type> convertTritonTensorType(RankedTensorType type);
+  std::optional<Type> convertTritonTensorType(RankedTensorType type);
 };
 
 #endif
